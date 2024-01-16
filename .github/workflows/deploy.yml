@@ -11,14 +11,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set node version to 21
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 21
 
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: true
+
       - name: Install and Build 🔧
         run: |
-          npm i -g pnpm
-          pnpm pnpm
           pnpm build
 
       - name: Deploy 🚀
