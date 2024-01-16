@@ -1,22 +1,10 @@
-export const throttle = (fn: Function, wait: number = 300) => {
-  let inThrottle: boolean, lastFn: ReturnType<typeof setTimeout>, lastTime: number
-  return function (this: any, ...args: unknown[]) {
-    const context = this
-    if (!inThrottle) {
-      fn.apply(context, args)
-      lastTime = Date.now()
-      inThrottle = true
-    } else {
-      clearTimeout(lastFn)
-      lastFn = setTimeout(
-        () => {
-          if (Date.now() - lastTime >= wait) {
-            fn.apply(context, args)
-            lastTime = Date.now()
-          }
-        },
-        Math.max(wait - (Date.now() - lastTime), 0)
-      )
+export function throttle(callback: Function, delay: number) {
+  let lastCall = 0
+  return function (...args: unknown[]) {
+    const now = new Date().getTime()
+    if (now - lastCall >= delay) {
+      callback(...args)
+      lastCall = now
     }
   }
 }
