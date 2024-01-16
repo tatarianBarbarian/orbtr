@@ -1,0 +1,43 @@
+:root {
+  /* Colors */
+  --color-black-100: #0a0a0a;
+  --color-black-65: #222222;
+  --color-black-50: rgb(146, 146, 146);
+  --color-black-transparent-65: #161616;
+
+  /* Z-indexes */
+  --z-index-base: 1;
+  --z-above: 1;
+  --z-below: -1;
+  --z-index-top: 99;
+}
+
+:root {
+  /* Colors semantic */
+  --color-bg-opaque: var(--color-black-100);
+  --color-components-secondary: var(--color-black-50);
+  --color-cards-base: var(--color-black-transparent-65);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  color: white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
