@@ -17,6 +17,6 @@ const get = async (endpoint: string, query: Record<string, string>) => {
 }
 
 export const getWeek = async (startDate: string): Promise<WeekActvities> =>
-  await get('/receive_week', {
+  get('/receive_week', {
     start_date: startDate
   })
