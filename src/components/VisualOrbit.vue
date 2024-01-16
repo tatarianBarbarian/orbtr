@@ -30,34 +30,31 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
 
 <style scoped>
 .orbit {
-  border: 1px solid white;
-
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(50%);
-  /* Calculations for orbit */
-  --orbit-radius: var(--z-index-orbit-l1); /* Default */
   width: calc(var(--orbit-radius) * 2);
   height: calc(var(--orbit-radius) * 2);
-  bottom: 0;
-  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
-  background: none;
+  border: 1px solid white;
+  position: absolute;
   z-index: var(--z-index-base);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%);
+  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
+  border-radius: 50%;
+  background: none;
 }
 
 .label {
+  display: block;
   position: absolute;
   top: -17px;
-  color: var(--color-components-secondary);
   left: 50%;
+  padding: 5px;
+  max-width: 100%;
+  color: var(--color-components-secondary);
   transform: translateX(-50%);
   background: var(--color-bg-opaque);
-  display: block;
-  max-width: 100%;
   text-align: center;
   font-size: 16px;
-  padding: 5px;
   z-index: var(--z-index-base);
 }
 
@@ -71,31 +68,5 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
 .orb-leave-to.orbit_level_7 {
   --orbit-radius: var(--orbit-future) !important;
   opacity: 0;
-}
-
-</style>
-
-<style>
-:root {
-  --orbit-future: 120px;
-  --orbit-base: 24vh;
-  --orbit-l7: calc(var(--orbit-base) * 1);
-  --orbit-l6: calc(var(--orbit-base) * 1.5);
-  --orbit-l5: calc(var(--orbit-base) * 2);
-  --orbit-l4: calc(var(--orbit-base) * 2.5);
-  --orbit-l3: calc(var(--orbit-base) * 3);
-  --orbit-l2: calc(var(--orbit-base) * 3.5);
-  --orbit-l1: calc(var(--orbit-base) * 4);
-  --orbit-past: 2000px;
-
-  --z-index-orbit-l0: var(--z-index-base);
-  --z-index-orbit-l1: calc(var(--z-above) + var(--z-index-orbit-l0));
-  --z-index-orbit-l2: calc(var(--z-above) + var(--z-index-orbit-l1));
-  --z-index-orbit-l3: calc(var(--z-above) + var(--z-index-orbit-l2));
-  --z-index-orbit-l4: calc(var(--z-above) + var(--z-index-orbit-l3));
-  --z-index-orbit-l5: calc(var(--z-above) + var(--z-index-orbit-l4));
-  --z-index-orbit-l6: calc(var(--z-above) + var(--z-index-orbit-l5));
-  --z-index-orbit-l7: calc(var(--z-above) + var(--z-index-orbit-l6));
-  --z-index-orbit-l8: calc(var(--z-above) + var(--z-index-orbit-l6));
 }
 </style>

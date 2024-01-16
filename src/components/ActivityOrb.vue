@@ -58,12 +58,12 @@ const onPfpMouseLeave = () => {
 <style scoped>
 .orb {
   --orb-radius: 30px;
+  position: absolute;
   width: calc(var(--orb-radius) * 2);
   height: calc(var(--orb-radius) * 2);
+  left: 50%;
   border-radius: 50%;
   border: 1px solid black;
-  position: absolute;
-  left: 50%;
   box-sizing: border-box;
   top: calc(var(--orb-radius) * -1);
   /* Placing sphere */
@@ -74,7 +74,7 @@ const onPfpMouseLeave = () => {
 }
 
 .pfp {
-  transform: rotate(calc(-1 * var(--rotation)));
+  transform: rotate(calc(var(--rotation) * -1));
 }
 
 .fade-enter-active,

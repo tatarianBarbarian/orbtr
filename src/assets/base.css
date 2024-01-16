@@ -10,13 +10,33 @@
   --z-above: 1;
   --z-below: -1;
   --z-index-top: 99;
-}
 
-:root {
   /* Colors semantic */
   --color-bg-opaque: var(--color-black-100);
   --color-components-secondary: var(--color-black-50);
   --color-cards-base: var(--color-black-transparent-65);
+
+  /* Orbits */
+  --orbit-future: 120px;
+  --orbit-base: 24vh;
+  --orbit-l7: calc(var(--orbit-base) * 1);
+  --orbit-l6: calc(var(--orbit-base) * 1.5);
+  --orbit-l5: calc(var(--orbit-base) * 2);
+  --orbit-l4: calc(var(--orbit-base) * 2.5);
+  --orbit-l3: calc(var(--orbit-base) * 3);
+  --orbit-l2: calc(var(--orbit-base) * 3.5);
+  --orbit-l1: calc(var(--orbit-base) * 4);
+  --orbit-past: 2000px;
+
+  --z-index-orbit-l0: var(--z-index-base);
+  --z-index-orbit-l1: calc(var(--z-above) + var(--z-index-orbit-l0));
+  --z-index-orbit-l2: calc(var(--z-above) + var(--z-index-orbit-l1));
+  --z-index-orbit-l3: calc(var(--z-above) + var(--z-index-orbit-l2));
+  --z-index-orbit-l4: calc(var(--z-above) + var(--z-index-orbit-l3));
+  --z-index-orbit-l5: calc(var(--z-above) + var(--z-index-orbit-l4));
+  --z-index-orbit-l6: calc(var(--z-above) + var(--z-index-orbit-l5));
+  --z-index-orbit-l7: calc(var(--z-above) + var(--z-index-orbit-l6));
+  --z-index-orbit-l8: calc(var(--z-above) + var(--z-index-orbit-l6));
 }
 
 body {
