@@ -10,10 +10,10 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Set node version to 16
+      - name: Set node version to 21
         uses: actions/setup-node@v2
         with:
-          node-version: 21.5.0
+          node-version: 21
 
       - name: Install and Build 🔧
         run: |
