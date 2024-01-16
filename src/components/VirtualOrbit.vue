@@ -2,7 +2,7 @@
   <div
     class="orbit"
     :class="`orbit_level_${level}`"
-    :style="{ '--radius': `var(--orbit-l${level})` }"
+    :style="{ '--orbit-radius': `var(--orbit-l${level})` }"
     ref="elementRef"
   >
     <ActivityOrb
@@ -43,8 +43,8 @@ const activitiesPositions = computed(() =>
   left: 50%;
   transform: translateX(-50%) translateY(50%);
   /* Calculations for orbit */
-  width: calc(var(--radius) * 2);
-  height: calc(var(--radius) * 2);
+  width: calc(var(--orbit-radius) * 2);
+  height: calc(var(--orbit-radius) * 2);
   bottom: 0;
   transition: width 1s ease, height 1s ease, opacity 0.3s ease;
   background: none;
@@ -53,13 +53,13 @@ const activitiesPositions = computed(() =>
 
 .orb-enter-from.orbit_level_1,
 .orb-leave-to.orbit_level_1 {
-  --radius: var(--orbit-past) !important;
+  --orbit-radius: var(--orbit-past) !important;
   opacity: 0;
 }
 
 .orb-enter-from.orbit_level_7,
 .orb-leave-to.orbit_level_7 {
-  --radius: var(--orbit-future) !important;
+  --orbit-radius: var(--orbit-future) !important;
   opacity: 0;
 }
 </style>

@@ -68,7 +68,7 @@ const onPfpMouseLeave = () => {
   top: calc(var(--orb-radius) * -1);
   /* Placing sphere */
   transform: rotate(var(--rotation)) translateX(-50%);
-  transform-origin: 0 calc(var(--radius) + var(--orb-radius));
+  transform-origin: 0 calc(var(--orbit-radius) + var(--orb-radius));
   box-shadow: 0px 0px 0px 10px var(--color-bg-opaque);
   transition: all 1s ease;
 }
