@@ -1,0 +1,66 @@
+<template>
+  <div
+    class="orbit"
+    :class="`orbit_level_${level}`"
+    :style="{ '--radius': `var(--orbit-l${level})` }"
+    ref="elementRef"
+  >
+    <ActivityItem
+      v-for="(activity, index) in activities.array"
+      :key="activity.id"
+      :rotation="activitiesPositions[index]"
+      :activity="activity"
+    />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
+import ActivityItem from './ActivityItem.vue'
+import type { Activity } from '@/types'
+
+const elementRef = ref<HTMLElement | null>(null)
+
+type Activities = {
+  array: Activity[]
+  contact_date: string
+}
+
+const props = defineProps<{
+  level: number
+  activities: Activities
+}>()
+
+const activitiesPositions = computed(() =>
+  calculateSpheresRotations(props.activities.array.length, props.level)
+)
+</script>
+
+<style scoped>
+.orbit {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  /* Calculations for orbit */
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  bottom: 0;
+  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
+  background: none;
+  z-index: calc(var(--z-above) + var(--z-index-base)) 
+}
+
+.orb-enter-from.orbit_level_1,
+.orb-leave-to.orbit_level_1 {
+  --radius: var(--orbit-past) !important;
+  opacity: 0;
+}
+
+.orb-enter-from.orbit_level_7,
+.orb-leave-to.orbit_level_7 {
+  --radius: var(--orbit-future) !important;
+  opacity: 0;
+}
+</style>
+

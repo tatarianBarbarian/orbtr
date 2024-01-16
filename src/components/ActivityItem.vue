@@ -70,9 +70,6 @@ const onPfpMouseLeave = () => {
   transform-origin: 0 calc(var(--radius) + 30px);
   box-shadow: 0px 0px 0px 10px var(--color-bg-opaque);
   transition: all 1s ease;
-  --z-index-sphere: calc(var(--z-above) + var(--z-index-base));
-  z-index: var(--z-index-sphere);
-  isolation: isolate;
 }
 
 .pfp {

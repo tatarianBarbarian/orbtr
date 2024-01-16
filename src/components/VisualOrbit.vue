@@ -2,27 +2,18 @@
   <div
     class="orbit"
     :class="`orbit_level_${level}`"
-    :style="{ '--radius': `var(--orbit-l${level})`, zIndex: level }"
+    :style="{ '--radius': `var(--orbit-l${level})` }"
     ref="elementRef"
   >
-    <ActivityItem
-      v-for="(activity, index) in activities.array"
-      :key="activity.id"
-      :rotation="activitiesPositions[index]"
-      :activity="activity"
-    />
     <span class="label" v-if="level === 1">{{ label }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
-import ActivityItem from './ActivityItem.vue'
+import { computed } from 'vue'
 import type { Activity } from '@/types'
 import dayjs from 'dayjs'
 
-const elementRef = ref<HTMLElement | null>(null)
 
 type Activities = {
   array: Activity[]
@@ -34,19 +25,11 @@ const props = defineProps<{
   activities: Activities
 }>()
 
-const activitiesPositions = computed(() =>
-  calculateSpheresRotations(props.activities.array.length, props.level)
-)
 const label = computed(() => dayjs(props.activities.contact_date).format('ddd MMM D'))
 </script>
 
 <style scoped>
 .orbit {
-  /* Temporary comment, may cause performance issues */
-  /* background:
-    linear-gradient(to bottom, var(--color-bg-opaque), var(--color-bg-opaque)) padding-box,
-    linear-gradient(to bottom, white, var(--color-bg-opaque) 50%) border-box; */
-  /* border: 1px solid transparent; */
   border: 1px solid white;
 
   border-radius: 50%;
@@ -59,7 +42,8 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
   height: calc(var(--radius) * 2);
   bottom: 0;
   transition: width 1s ease, height 1s ease, opacity 0.3s ease;
-  isolation: isolate;
+  background: none;
+  z-index: var(--z-index-base);
 }
 
 .label {
@@ -88,6 +72,7 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
   --radius: var(--orbit-future) !important;
   opacity: 0;
 }
+
 </style>
 
 <style>

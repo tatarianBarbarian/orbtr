@@ -1,7 +1,16 @@
 <template>
   <SpaceField :loading="state.status === 'loading'">
+    <div class="gradient" />
     <TransitionGroup name="orb" v-if="orbits.list.length > 0">
-      <SingleOrbit
+      <VisualOrbit
+        v-for="orbit in orbits.list"
+        :key="orbit.activities.contact_date"
+        :level="orbit.level"
+        :activities="orbit.activities"
+      />
+    </TransitionGroup>
+    <TransitionGroup name="orb" v-if="orbits.list.length > 0">
+      <VirtualOrbit
         v-for="orbit in orbits.list"
         :key="orbit.activities.contact_date"
         :level="orbit.level"
@@ -14,7 +23,8 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
-import SingleOrbit from './components/SingleOrbit.vue'
+import VisualOrbit from './components/VisualOrbit.vue'
+import VirtualOrbit from './components/VirtualOrbit.vue'
 import SpaceField from './components/SpaceField.vue'
 import { useOrbits } from './composables/useOrbits.ts'
 import ErrorMessage from './components/ErrorMessage.vue'
@@ -39,4 +49,14 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.gradient {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-bg-opaque));
+  z-index: calc(var(--z-above) + var(--z-index-base));
+}
+</style>
