@@ -41,6 +41,7 @@ const activitiesPositions = computed(() =>
 .orbit {
   position: absolute;
   left: 50%;
+  border-radius: 50%;
   transform: translateX(-50%) translateY(50%);
   /* Calculations for orbit */
   width: calc(var(--orbit-radius) * 2);
