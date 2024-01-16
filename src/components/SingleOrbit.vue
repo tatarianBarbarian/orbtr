@@ -42,21 +42,23 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
 
 <style scoped>
 .orbit {
-  background:
+  /* Temporary comment, may cause performance issues */
+  /* background:
     linear-gradient(to bottom, var(--color-bg-opaque), var(--color-bg-opaque)) padding-box,
-    linear-gradient(to bottom, white, var(--color-bg-opaque) 50%) border-box;
-  border: 1px solid transparent;
+    linear-gradient(to bottom, white, var(--color-bg-opaque) 50%) border-box; */
+  /* border: 1px solid transparent; */
+  border: 1px solid white;
 
   border-radius: 50%;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(50%);
   /* Calculations for orbit */
   --radius: var(--z-index-orbit-l1); /* Default */
   width: calc(var(--radius) * 2);
   height: calc(var(--radius) * 2);
-  bottom: calc(-1 * var(--radius));
-  transition: all 1s ease;
+  bottom: 0;
+  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
   isolation: isolate;
 }
 
