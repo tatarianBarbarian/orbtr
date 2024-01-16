@@ -93,7 +93,7 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
 <style>
 :root {
   --orbit-future: 120px;
-  --orbit-base: 11.5lvw;
+  --orbit-base: 24vh;
   --orbit-l7: calc(var(--orbit-base) * 1);
   --orbit-l6: calc(var(--orbit-base) * 1.5);
   --orbit-l5: calc(var(--orbit-base) * 2);
