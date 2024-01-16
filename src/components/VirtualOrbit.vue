@@ -5,7 +5,7 @@
     :style="{ '--radius': `var(--orbit-l${level})` }"
     ref="elementRef"
   >
-    <ActivityItem
+    <ActivityOrb
       v-for="(activity, index) in activities.array"
       :key="activity.id"
       :rotation="activitiesPositions[index]"
@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
-import ActivityItem from './ActivityItem.vue'
+import ActivityOrb from './ActivityOrb.vue'
 import type { Activity } from '@/types'
 
 const elementRef = ref<HTMLElement | null>(null)

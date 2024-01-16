@@ -1,5 +1,5 @@
 <template>
-  <div class="sphere" :style="{ '--rotation': `${rotation}deg` }">
+  <div class="orb" :style="{ '--rotation': `${rotation}deg` }">
     <div class="pfp" @mouseenter="onPfpMouseOver" @mouseleave="onPfpMouseLeave">
       <ProfilePic :src="activity.img" :name="activity.name" ref="anchor" />
     </div>
@@ -56,18 +56,19 @@ const onPfpMouseLeave = () => {
 </script>
 
 <style scoped>
-.sphere {
-  width: 60px;
-  height: 60px;
+.orb {
+  --orb-radius: 30px;
+  width: calc(var(--orb-radius) * 2);
+  height: calc(var(--orb-radius) * 2);
   border-radius: 50%;
   border: 1px solid black;
   position: absolute;
   left: 50%;
   box-sizing: border-box;
-  top: -30px;
+  top: calc(var(--orb-radius) * -1);
   /* Placing sphere */
   transform: rotate(var(--rotation)) translateX(-50%);
-  transform-origin: 0 calc(var(--radius) + 30px);
+  transform-origin: 0 calc(var(--radius) + var(--orb-radius));
   box-shadow: 0px 0px 0px 10px var(--color-bg-opaque);
   transition: all 1s ease;
 }
