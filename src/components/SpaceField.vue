@@ -39,6 +39,7 @@ const isFirstLoading = computed(() => loadingsCount.value === 0)
   background: var(--color-bg-opaque);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .logo {

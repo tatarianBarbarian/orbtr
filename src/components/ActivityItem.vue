@@ -72,6 +72,7 @@ const onPfpMouseLeave = () => {
   transition: all 1s ease;
   --z-index-sphere: calc(var(--z-above) + var(--z-index-base));
   z-index: var(--z-index-sphere);
+  isolation: isolate;
 }
 
 .pfp {

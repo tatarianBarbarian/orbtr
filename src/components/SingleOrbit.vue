@@ -57,6 +57,7 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
   height: calc(var(--radius) * 2);
   bottom: calc(-1 * var(--radius));
   transition: all 1s ease;
+  isolation: isolate;
 }
 
 .label {
