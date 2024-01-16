@@ -18,16 +18,17 @@ import SingleOrbit from './components/SingleOrbit.vue'
 import SpaceField from './components/SpaceField.vue'
 import { useOrbits } from './composables/useOrbits.ts'
 import ErrorMessage from './components/ErrorMessage.vue'
+import { throttle } from './utils/throttle'
 
 const { previousDay, nextDay, orbits, state } = useOrbits()
 
-const onMouseWheel = (e: WheelEvent) => {
+const onMouseWheel = throttle((e: WheelEvent) => {
   if (e.deltaY > 0) {
     previousDay()
   } else {
     nextDay()
   }
-}
+}, 1000)
 
 onMounted(() => {
   window.addEventListener('wheel', onMouseWheel)
