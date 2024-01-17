@@ -14,7 +14,6 @@ import { computed } from 'vue'
 import type { Activity } from '@/types'
 import dayjs from 'dayjs'
 
-
 type Activities = {
   array: Activity[]
   contact_date: string
@@ -38,7 +37,10 @@ const label = computed(() => dayjs(props.activities.contact_date).format('ddd MM
   left: 50%;
   bottom: 0;
   transform: translateX(-50%) translateY(50%);
-  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
+  transition:
+    width 1s ease,
+    height 1s ease,
+    opacity 0.3s ease;
   border-radius: 50%;
   background: none;
 }

@@ -47,9 +47,12 @@ const activitiesPositions = computed(() =>
   width: calc(var(--orbit-radius) * 2);
   height: calc(var(--orbit-radius) * 2);
   bottom: 0;
-  transition: width 1s ease, height 1s ease, opacity 0.3s ease;
+  transition:
+    width 1s ease,
+    height 1s ease,
+    opacity 0.3s ease;
   background: none;
-  z-index: calc(var(--z-above) + var(--z-index-base)) 
+  z-index: calc(var(--z-above) + var(--z-index-base));
 }
 
 .orb-enter-from.orbit_level_1,
@@ -64,4 +67,3 @@ const activitiesPositions = computed(() =>
   opacity: 0;
 }
 </style>
-
