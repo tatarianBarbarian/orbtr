@@ -18,18 +18,13 @@
 import { computed, ref } from 'vue'
 import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
 import ActivityOrb from './ActivityOrb.vue'
-import type { Activity } from '@/types'
+import type { DayActivities } from '@/types'
 
 const elementRef = ref<HTMLElement | null>(null)
 
-type Activities = {
-  array: Activity[]
-  contact_date: string
-}
-
 const props = defineProps<{
   level: number
-  activities: Activities
+  activities: DayActivities
 }>()
 
 const activitiesPositions = computed(() =>

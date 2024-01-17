@@ -11,17 +11,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Activity } from '@/types'
+import type { DayActivities } from '@/types'
 import dayjs from 'dayjs'
-
-type Activities = {
-  array: Activity[]
-  contact_date: string
-}
 
 const props = defineProps<{
   level: number
-  activities: Activities
+  activities: DayActivities
 }>()
 
 const label = computed(() => dayjs(props.activities.contact_date).format('ddd MMM D'))
