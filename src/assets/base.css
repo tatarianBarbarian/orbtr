@@ -17,8 +17,8 @@
   --color-cards-base: var(--color-black-transparent-65);
 
   /* Orbits */
-  --orbit-future: 120px;
   --orbit-base: 24vh;
+  --orbit-future: calc(var(--orbit-base) * 0.5);
   --orbit-l7: calc(var(--orbit-base) * 1);
   --orbit-l6: calc(var(--orbit-base) * 1.5);
   --orbit-l5: calc(var(--orbit-base) * 2);
