@@ -15,3 +15,5 @@ export type DayActivities = {
   array: Activity[]
   contact_date: string
 }
+
+export type WeekActvities = DayActivities[]

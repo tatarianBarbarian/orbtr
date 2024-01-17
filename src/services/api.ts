@@ -1,5 +1,4 @@
-import { type DayActivities } from '../types.ts'
-type WeekActvities = DayActivities[]
+import { type WeekActvities } from '../types.ts'
 
 const baseUrl = 'https://xwmi-5dlx-wkyj.t7.xano.io/api:oUvfVMO5'
 
