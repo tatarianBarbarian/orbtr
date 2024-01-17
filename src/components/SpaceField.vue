@@ -10,6 +10,7 @@
         :class="{ pulsate: loading, loaded: !loading }"
       />
     </div>
+    <div class="gradient" />
   </div>
 </template>
 
@@ -82,5 +83,15 @@ const isFirstLoading = computed(() => loadingsCount.value === 0)
   animation: pulse-animation 1s ease infinite;
 
   bottom: 50%;
+}
+
+.gradient {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-bg-opaque));
+  z-index: calc(var(--z-above) + var(--z-index-base));
 }
 </style>

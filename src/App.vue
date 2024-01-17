@@ -1,6 +1,5 @@
 <template>
   <SpaceField :loading="state.status === 'loading'">
-    <div class="gradient" />
     <TransitionGroup name="orb" v-if="orbits.list.length > 0">
       <VisualOrbit
         v-for="orbit in orbits.list"
@@ -48,15 +47,3 @@ onUnmounted(() => {
   window.removeEventListener('wheel', onMouseWheel)
 })
 </script>
-
-<style scoped>
-.gradient {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-bg-opaque));
-  z-index: calc(var(--z-above) + var(--z-index-base));
-}
-</style>
