@@ -16,8 +16,8 @@ export function calculateSpheresRotations(itemsCount: number, level?: number): n
 
     let position = result[index - 1] + gap
 
-    const isLeftInCenter = position <= 0 && position >= -5
-    const isRightInCenter = position >= 0 && position <= 5
+    const isLeftInCenter = position <= 0 && position >= -7
+    const isRightInCenter = position >= 0 && position <= 7
 
     // Move spheres from date label on 1st level
 
