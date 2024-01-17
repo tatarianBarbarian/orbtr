@@ -92,6 +92,6 @@ const isFirstLoading = computed(() => loadingsCount.value === 0)
   right: 0;
   height: 50vh;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-bg-opaque));
-  z-index: calc(var(--z-above) + var(--z-index-base));
+  z-index: var(--z-index-base);
 }
 </style>
