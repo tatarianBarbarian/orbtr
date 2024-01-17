@@ -15,9 +15,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { DayActivities } from '@/types'
 import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
 import ActivityOrb from './ActivityOrb.vue'
-import type { DayActivities } from '@/types'
 
 const props = defineProps<{
   level: number

@@ -20,10 +20,10 @@
 
 <script setup lang="ts">
 import { computed, ref, type Ref, type ComponentPublicInstance } from 'vue'
-import ProfilePic from './ProfilePic.vue'
 import { useFloating, flip, shift, offset, autoUpdate } from '@floating-ui/vue'
-import ActivityCard from './ActivityCard/ActivityCard.vue'
 import type { Activity } from '@/types'
+import ProfilePic from './ProfilePic.vue'
+import ActivityCard from './ActivityCard/ActivityCard.vue'
 
 defineProps<{ activity: Activity; rotation: number }>()
 

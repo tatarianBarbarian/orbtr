@@ -1,7 +1,7 @@
-import { getWeek } from '@/services/api'
-import type { WeekActvities } from '@/types'
 import type { Dayjs } from 'dayjs'
 import { reactive } from 'vue'
+import type { WeekActvities } from '@/types'
+import { getWeek } from '@/services/api'
 
 export const fetcherDateFormat = 'YYYY-MM-DD'
 

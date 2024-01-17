@@ -1,8 +1,8 @@
 import { onMounted, reactive, ref, watch } from 'vue'
-import { type DayActivities } from '../types.ts'
-import { useWeekFetcher, fetcherDateFormat } from './useWeekFetcher.ts'
 import dayjs, { Dayjs } from 'dayjs'
 import isToday from 'dayjs/plugin/isToday'
+import { type DayActivities } from '../types.ts'
+import { useWeekFetcher, fetcherDateFormat } from './useWeekFetcher.ts'
 
 export function useOrbits() {
   dayjs.extend(isToday)

@@ -17,8 +17,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import logo from '../assets/logo.png'
-const props = defineProps<{ loading: boolean }>()
 
+const props = defineProps<{ loading: boolean }>()
 const loadingsCount = ref(0)
 
 watch(

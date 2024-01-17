@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { DayActivities } from '@/types'
 import dayjs from 'dayjs'
+import type { DayActivities } from '@/types'
 
 const props = defineProps<{
   level: number

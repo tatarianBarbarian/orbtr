@@ -31,13 +31,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import IconChevronDown from '../icons/IconChevronDown.vue'
+import { ref, computed } from 'vue'
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/en'
-
-import { computed } from 'vue'
+import IconChevronDown from '../icons/IconChevronDown.vue'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import IconMail from '../icons/IconMail.vue'
 
 dayjs.extend(relativeTime)
