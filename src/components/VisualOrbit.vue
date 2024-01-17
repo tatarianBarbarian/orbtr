@@ -3,7 +3,6 @@
     class="orbit"
     :class="`orbit_level_${level}`"
     :style="{ '--orbit-radius': `var(--orbit-l${level})` }"
-    ref="elementRef"
   >
     <span class="label" v-if="level === 1">{{ label }}</span>
   </div>

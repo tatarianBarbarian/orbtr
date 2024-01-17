@@ -3,7 +3,6 @@
     class="orbit"
     :class="`orbit_level_${level}`"
     :style="{ '--orbit-radius': `var(--orbit-l${level})` }"
-    ref="elementRef"
   >
     <ActivityOrb
       v-for="(activity, index) in activities.array"
@@ -15,12 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { calculateSpheresRotations } from '@/utils/calculateSpheresRotations.ts'
 import ActivityOrb from './ActivityOrb.vue'
 import type { DayActivities } from '@/types'
-
-const elementRef = ref<HTMLElement | null>(null)
 
 const props = defineProps<{
   level: number
