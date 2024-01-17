@@ -26,7 +26,7 @@
   --orbit-l3: calc(var(--orbit-base) * 3);
   --orbit-l2: calc(var(--orbit-base) * 3.5);
   --orbit-l1: calc(var(--orbit-base) * 4);
-  --orbit-past: 2000px;
+  --orbit-past: calc(var(--orbit-base) * 5);
 
   --z-index-orbit-l0: var(--z-index-base);
   --z-index-orbit-l1: calc(var(--z-above) + var(--z-index-orbit-l0));
