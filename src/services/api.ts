@@ -1,6 +1,7 @@
 import { type WeekActvities } from '../types.ts'
 
-const baseUrl = 'https://xwmi-5dlx-wkyj.t7.xano.io/api:oUvfVMO5'
+export const apiUrl = window.location.toString()
+export const baseUrl = apiUrl + '/api'
 
 const get = async (endpoint: string, query: Record<string, string>) => {
   const url = new URL(`${baseUrl}${endpoint}`)

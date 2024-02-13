@@ -4,4 +4,12 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+async function prepare() {
+  // @ts-ignore
+  const { worker } = await import('./mock/worker')
+  return worker.start()
+}
+
+prepare().then(() => {
+  createApp(App).mount('#app')
+})
