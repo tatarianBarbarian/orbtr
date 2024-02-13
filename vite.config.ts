@@ -4,13 +4,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '',
-  publicDir: './public',
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+export default ({ mode }: { mode: string }) =>
+  defineConfig({
+    base: mode === 'development' ? '' : '/orbtr/',
+    publicDir: './public',
+    plugins: [vue()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
     }
-  }
-})
+  })
